@@ -90,7 +90,7 @@ def find_long_points(df, o_threshold_secs=120, d_threshold_secs=180):
     }
 
 
-def format_durations(point_dict, verbosity=0):
+def format_durations(point_dict, verbosity=0, df=None):
     output = ""
     for k, v in point_dict.items():
         if "all_" in k and verbosity == 0:
@@ -133,32 +133,27 @@ def extract_points(cell):
     return result
 
 
-def get_line_stats(point_dict, df):
+def get_point_types_df(df2):
     all_points = []
-    df2 = df.copy()
-    school_order = list(df2.columns)  # preserve CSV school order
-
     for col in df2.columns:
         df2_parsed = df2[col].apply(extract_points)
         df2_exploded = df2_parsed.explode().dropna()
         df2_exploded = pd.DataFrame(
-            df2_exploded.tolist(), columns=["Line", "point_type"]
+            df2_exploded.tolist(), columns=["Line", "Point_Type"]
         )
         df2_exploded["School"] = col
         all_points.append(df2_exploded)
-
     df2_points = pd.concat(all_points, ignore_index=True)
-    print(df2_points.head())
-    print(df2_points.dtypes)
-    print(df2_points["point_type"].unique())
+    return df2_points
 
+
+def create_count_percent_df(df2_points):
     # Count points per school and line
     counts = (
-        df2_points.groupby(["School", "Line", "point_type"])
+        df2_points.groupby(["School", "Line", "Point_Type"])
         .size()
         .unstack(fill_value=0)
     )
-    print(f"counts: {counts}")
 
     # Calculate percentages
     percentages = counts.div(counts.sum(axis=1), axis=0).round(2) * 100
@@ -168,35 +163,44 @@ def get_line_stats(point_dict, df):
     percentages.columns = ["B%", "H%"]  # percentages
     combined = pd.concat([counts, percentages], axis=1)
 
+    return combined
+
+
+def sort_combined_df(combined_df, school_order):
     # Reset index to sort lines safely by category_key
-    combined_reset = combined.reset_index()
-    combined_reset["line_order"] = combined_reset["Line"].apply(category_key)
+    combined_df_reset = combined_df.reset_index()
+    combined_df_reset["line_order"] = combined_df_reset["Line"].apply(
+        category_key
+    )
 
     # Preserve original CSV school order
-    combined_reset["School"] = pd.Categorical(
-        combined_reset["School"], categories=school_order, ordered=True
+    combined_df_reset["School"] = pd.Categorical(
+        combined_df_reset["School"], categories=school_order, ordered=True
     )
 
     # Sort by school order and line category
-    combined_reset = combined_reset.sort_values(["School", "line_order"]).drop(
-        columns="line_order"
-    )
+    combined_df_reset = combined_df_reset.sort_values(
+        ["School", "line_order"]
+    ).drop(columns="line_order")
 
-    # Set MultiIndex
-    combined_sorted = combined_reset.set_index(["School", "Line"])
+    combined_sorted = combined_df_reset.set_index(["School", "Line"])
 
+    return combined_sorted
+
+
+def get_overall_stats_df(
+    counts,
+):
     # --- Compute overall ---
     overall_counts = counts.groupby(level="Line").sum()
     overall_schools_present = counts.groupby(level="Line").apply(
         lambda df: (df.sum(axis=1) > 0).sum()
     )
-    overall_percentages = overall_counts.div(overall_schools_present, axis=0)
-    overall_percentages = (
-        overall_percentages.div(overall_percentages.sum(axis=1), axis=0).round(
-            2
-        )
-        * 100
+    overall_fractions = overall_counts.div(overall_schools_present, axis=0)
+    overall_fractions = overall_fractions.div(
+        overall_fractions.sum(axis=1), axis=0
     )
+    overall_percentages = overall_fractions.round(2) * 100
 
     overall_counts.index = pd.MultiIndex.from_product(
         [["Overall"], overall_counts.index], names=["School", "Line"]
@@ -209,9 +213,10 @@ def get_line_stats(point_dict, df):
     overall_combined = pd.concat([overall_counts, overall_percentages], axis=1)
     overall_combined.columns = ["B", "H", "B%", "H%"]
 
-    # Concatenate Overall first, then the rest
-    final_combined = pd.concat([overall_combined, combined_sorted])
+    return overall_combined
 
+
+def sort_final_stats_df(final_combined, school_order):
     # Ensure school order: Overall first, then CSV order
     school_levels = ["Overall"] + school_order
     final_combined.index = final_combined.index.set_levels(
@@ -224,14 +229,48 @@ def get_line_stats(point_dict, df):
     )
 
     # Sort by MultiIndex (school first, line second)
-    final_combined = final_combined.sort_index(
+    final_sorted = final_combined.sort_index(
         level=[0, 1], sort_remaining=False
     )
 
-    return final_combined
+    return final_sorted
 
 
-if __name__ == "__main__":
+def get_line_stats(point_dict, df):
+    # Copy dataframe, preserve original game order
+    df2 = df.copy()
+    school_order = list(df2.columns)  # preserve CSV school order
+
+    # Separate points
+    df2_points = get_point_types_df(df2)
+
+    # Get counts and percentages of point types into a DF, sort by school
+    combined_df = create_count_percent_df(df2_points)
+    combined_sorted = sort_combined_df(combined_df, school_order)
+
+    # Get overall Stats
+    overall_stats_df = get_overall_stats_df(counts=combined_sorted[["B", "H"]])
+
+    # Concatenate Overall first, then the rest
+    final_combined = pd.concat([overall_stats_df, combined_sorted])
+
+    # Re-sort combined df
+    final_sorted = sort_final_stats_df(final_combined, school_order)
+
+    return final_sorted
+
+
+def save_files(formatted_durations, line_stats_df):
+    OUTPUT_DIR = Path("outputs")
+    OUTPUT_DIR.mkdir(exist_ok=True)
+    durations_txt_path = f"{OUTPUT_DIR}/points_by_category_duration.txt"
+    with open(durations_txt_path, "w") as f:
+        f.write(formatted_durations)
+    line_stats_path = f"{OUTPUT_DIR}/line_stats.csv"
+    line_stats_df.to_csv(line_stats_path)
+
+
+def main():
     # read in timestamp csv
     CSV_FILENAME = "master_pat_games_timestamps.csv"
     df = pd.read_csv(CSV_FILENAME)
@@ -240,18 +279,14 @@ if __name__ == "__main__":
     point_dict = find_long_points(df)
 
     # format points
-    formatted_durations = format_durations(point_dict, verbosity=1)
+    formatted_durations = format_durations(point_dict, verbosity=1, df=df)
 
     # Get stats
     line_stats_df = get_line_stats(point_dict, df)
-    # print(line_stats_df)
-    line_stats_df.to_csv("line_stats.csv")
+    print(line_stats_df)
 
-    # Save to output dir
-    OUTPUT_DIR = Path("outputs")
-    OUTPUT_DIR.mkdir(exist_ok=True)
-    durations_txt_path = f"{OUTPUT_DIR}/points_by_category_duration.txt"
-    with open(durations_txt_path, "w") as f:
-        f.write(formatted_durations)
-    line_stats_path = f"{OUTPUT_DIR}/line_stats.csv"
-    line_stats_df.to_csv(line_stats_path)
+    # save_files(formatted_durations, line_stats_df)
+
+
+if __name__ == "__main__":
+    main()
