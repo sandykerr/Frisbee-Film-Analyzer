@@ -25,7 +25,6 @@ def parse_duration(cell):
 
     fmt_end = "%M:%S" if end.count(":") == 1 else "%H:%M:%S"
     t1 = datetime.strptime(end, fmt_end)
-
     return (t1 - t0).seconds
 
 
@@ -77,7 +76,6 @@ def find_long_points(df, o_threshold_secs=120, d_threshold_secs=180):
                                 d_breaks.append((r, c, duration))
                             else:
                                 d_breaks.append((r, c, duration))
-
     return {
         "all_o_points": all_o_points,
         "long_o_holds": long_o_holds,
@@ -129,7 +127,7 @@ def extract_points(cell):
             line, point_type = match.groups()
             point_type = point_type.upper().strip()
             result.append((line.strip(), point_type.upper()))
-        # print(f"extract_points result: {result}")
+
     return result
 
 
@@ -162,7 +160,6 @@ def create_count_percent_df(df2_points):
     counts.columns = ["B", "H"]  # raw counts
     percentages.columns = ["B%", "H%"]  # percentages
     combined = pd.concat([counts, percentages], axis=1)
-
     return combined
 
 
@@ -184,7 +181,6 @@ def sort_combined_df(combined_df, school_order):
     ).drop(columns="line_order")
 
     combined_sorted = combined_df_reset.set_index(["School", "Line"])
-
     return combined_sorted
 
 
@@ -212,7 +208,6 @@ def get_overall_stats_df(
     # Combine counts and percentages for Overall
     overall_combined = pd.concat([overall_counts, overall_percentages], axis=1)
     overall_combined.columns = ["B", "H", "B%", "H%"]
-
     return overall_combined
 
 
@@ -232,7 +227,6 @@ def sort_final_stats_df(final_combined, school_order):
     final_sorted = final_combined.sort_index(
         level=[0, 1], sort_remaining=False
     )
-
     return final_sorted
 
 
@@ -256,7 +250,6 @@ def get_line_stats(point_dict, df):
 
     # Re-sort combined df
     final_sorted = sort_final_stats_df(final_combined, school_order)
-
     return final_sorted
 
 
@@ -285,7 +278,7 @@ def main():
     line_stats_df = get_line_stats(point_dict, df)
     print(line_stats_df)
 
-    # save_files(formatted_durations, line_stats_df)
+    save_files(formatted_durations, line_stats_df)
 
 
 if __name__ == "__main__":
