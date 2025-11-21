@@ -127,7 +127,6 @@ def extract_points(cell):
             line, point_type = match.groups()
             point_type = point_type.upper().strip()
             result.append((line.strip(), point_type.upper()))
-
     return result
 
 
