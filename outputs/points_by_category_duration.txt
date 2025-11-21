@@ -1,0 +1,178 @@
+all_o_points
+(11, 3) → 20:30-21:46 D1 as O Point (H), 1m16s
+(0, 0) → start-3:08 O Point (B), 3m8s
+(0, 2) → start-0:07 O Point (H), 0m7s
+(0, 3) → start-0:22 O Point (H), 0m22s
+(0, 4) → start-2:08 O Point (H), 2m8s
+(1, 0) → 3:30-3:46 O Point (H), 0m16s
+(1, 6) → 3:14-3:47 O Point (H), 0m33s
+(2, 4) → 3:20-3:44 O Point (H), 0m24s
+(2, 5) → 3:45-5:30 O Point (H), 1m45s
+(3, 0) → 4:49-5:08 O Point (H), 0m19s
+(3, 2) → 4:31-4:45 O Point (H), 0m14s
+(3, 6) → 4:48-6:28 O point (H), 1m40s
+(4, 5) → 6:45-7:24 O Point (H) , 0m39s
+(5, 4) → 7:15-7:40 O Point (H), 0m25s
+(5, 6) → 7:06-9:13 O Point (H), 2m7s
+(6, 0) → 7:40-7:50 O Point (H), 0m10s
+(6, 1) → 13:15-14:05 O Point (H), 0m50s
+(6, 2) → 8:03-8:22 O Point (H), 0m19s
+(6, 5) → 11:08-11:59 O Point (H), 0m51s
+(7, 3) → 16:35-17:00 O Point (H), 0m25s
+(7, 4) → 9:45-10:10 O Point (H), 0m25s
+(8, 5) → 14:27-14:50 O Point (B), 0m23s
+(9, 0) → 12:00-12:56 O Point (H), 0m56s
+(9, 1) → 19:31-20:04 O Point (H), 0m33s
+(9, 2) → 16:00-16:15 O Point (H), 0m15s
+(9, 3) → 18:56-19:53 O Point (H), 0m57s
+(9, 4) → 13:14-13:43 O Point (H), 0m29s
+(9, 5) → 14:59-16:07 O Point (H), 1m8s
+(9, 6) → 13:29-13:58 O Point (H), 0m29s
+(11, 0) → 14:13-14:40 O Point (H), 0m27s
+(11, 2) → 21:51-22:16 O Point (H), 0m25s
+(11, 4) → 15:47-16:55 O Point (B), 1m8s
+(11, 6) → 15:30-16:25 O Point (H), 0m55s
+(12, 4) → 17:05-17:30 O Point (H), 0m25s
+(12, 5) → 17:27-19:17 O Point (H), 1m50s
+(13, 0) → 16:10-17:42 O Point (H), 1m32s
+(13, 1) → 28:29-28:42 O Point (H), 0m13s
+(13, 3) → 23:40-24:03 O Point (H), 0m23s
+(13, 6) → 18:37-20:29 O Point (H), 1m52s
+(14, 5) → 20:59-21:17 O Point (H), 0m18s
+(14, 6) → 21:08-23:25 O Point (H), 2m17s
+(15, 0) → 18:33-19:30 O Point (H), 0m57s
+(15, 1) → 31:50-32:05 O Point (H), 0m15s
+(15, 4) → 30:50-31:15 O Point (H), 0m25s
+(15, 5) → 21:28-23:08 O Point (H), 1m40s
+(16, 6) → 24:25-27:23 O Point (H), 2m58s
+(17, 0) → 21:21-22:15 O Point (H), 0m54s
+(18, 6) → 28:57-30:17 O Point (H), 1m20s
+(19, 0) → 23:22-25:42 O Point (H), 2m20s
+long_o_holds
+(0, 4) → start-2:08 O Point (H), 2m8s
+(5, 6) → 7:06-9:13 O Point (H), 2m7s
+(14, 6) → 21:08-23:25 O Point (H), 2m17s
+(16, 6) → 24:25-27:23 O Point (H), 2m58s
+(19, 0) → 23:22-25:42 O Point (H), 2m20s
+o_breaks
+(0, 0) → start-3:08 O Point (B), 3m8s
+(8, 5) → 14:27-14:50 O Point (B), 0m23s
+(11, 4) → 15:47-16:55 O Point (B), 1m8s
+long_o_breaks
+(0, 0) → start-3:08 O Point (B), 3m8s
+all_d_points
+(0, 1) → start-0:33 D1 Point (B), 0m33s
+(0, 5) → start-1:17 D1 Point (B), 1m17s
+(0, 6) → start-3:11 D1 Point (H), 3m11s
+(1, 2) → 0:14-3:34 D1 Point (B), 3m20s
+(1, 3) → 0:29-1:15 D1 Point (B), 0m46s
+(1, 4) → 2:10-3:08 D1 Point (H), 0m58s
+(2, 0) → 3:52-4:36 D1 point (H), 0m44s
+(2, 1) → 1:25-4:00 D1 Point (B), 2m35s
+(3, 4) → 4:33-6:27 D1 Point (B), 1m54s
+(3, 5) → 5:39-6:24 D1 Point (H), 0m45s
+(4, 0) → 5:11-5:43 D1 Point (B), 0m32s
+(5, 3) → 13:40-14:43 D1 + Daylan Point (B), 1m3s
+(5, 5) → 7:31-10:42 D1 Point (H), 3m11s
+(6, 4) → 7:50-9:12 D1 Point (H), 1m22s
+(6, 6) → 9:17-11:10 D1 Point (B), 1m53s
+(7, 0) → 7:56-8:34 D1 Point (B), 0m38s
+(7, 1) → 14:10-15:04 D1 Point (B), 0m54s
+(7, 2) → 8:32-12:05 D1 Point (B), 3m33s
+(8, 0) → 8:37-11:56 D1 Point (H), 3m19s
+(10, 2) → 16:23-21:07 D1 Point (H), 4m44s
+(10, 4) → 14:32-14:35 D1 Point (H), 0m3s
+(10, 6) → 14:29-15:21 D1 Point (H), 0m52s
+(11, 1) → 22:32-25:22 D1 Point (B), 2m50s
+(11, 5) → 16:30-17:17 D1 Point (H), 0m47s
+(12, 0) → 14:58-16:03 D1 Point (H), 1m5s
+(14, 0) → 18:04-18:25 D1 Point (H), 0m21s
+(14, 3) → 24:11-26:09 D1 Point (B), 1m58s
+(15, 6) → 23:30-24:13 D1 Point (H), 0m43s
+(1, 1) → 0:42-1:19 D2 Point (B), 0m37s
+(1, 5) → 1:30-3:41 D2 Point (H), 2m11s
+(2, 2) → 3:36-4:08 D2 Point (H), 0m32s
+(2, 3) → 1:31-5:03 D2 Point (B), 3m32s
+(3, 1) → 4:03-5:42 D2 Point (B), 1m39s
+(4, 6) → 6:38-7:03 D2 Point (H), 0m25s
+(5, 0) → 5:47-7:12 D2 Point (H), 1m25s
+(5, 1) → 9:32-13:07 D2 Point (H), 3m35s
+(5, 2) → 6:37-7:54 D2 Point (H), 1m17s
+(6, 3) → 15:00-15:50 D2 Point (H), 0m50s
+(7, 5) → 12:30-13:55 D2 Point (H), 1m25s
+(8, 2) → 12:18-15:52 D2 Point (H), 3m34s
+(8, 6) → 12:47-13:27 D2 Point (H), 0m40s
+(10, 0) → 13:00-13:38 D2 Point (H), 0m38s
+(12, 1) → 25:32-27:53 D2 + Friends Point (H), 2m21s
+(12, 6) → 16:35-18:20 D2 Point (H), 1m45s
+(13, 5) → 19:34-20:40 D2 Point (H), 1m6s
+(14, 2) → 31:15-31:39 D2 Point (B), 0m24s
+(14, 4) → 24:27-30:24 D2 Point (H), 5m57s
+(16, 0) → 19:35-20:17 D2 Point (H), 0m42s
+(17, 6) → 27:40-28:38 D2 Point (H), 0m58s
+(3, 3) → 5:12-10:18 Aggro Z Point (B), 5m6s
+(4, 1) → 6:03-9:25 Aggro Z Point (B), 3m22s
+(4, 2) → 4:53-6:29 Aggro Z Point (B), 1m36s
+(7, 6) → 11:13-12:46 Aggro Z Point (B), 1m33s
+(8, 1) → 15:07-19:06 Aggro Z Point (B), 3m59s
+(8, 3) → 17:13-18:14 Aggro Z Point (H), 1m1s
+(13, 2) → 24:47-31:12 Aggro Z Point (B), 6m25s
+(4, 3) → 11:00-12:50 Suns Point (B), 1m50s
+(4, 4) → 6:29-6:54 Suns Point (H), 0m25s
+(10, 1) → 20:10-22:27 Suns Point (B), 2m17s
+(12, 2) → 23:00-24:40 Suns Point (B), 1m40s
+(14, 1) → 28:55-31:19 Suns Point (H), 2m24s
+(16, 3) → 26:50-29:12 Suns Point (B), 2m22s
+(2, 6) → 3:48-4:46 D Point (H), 0m58s
+(10, 3) → 20:07-20:28 O as D Point (H), 0m21s
+(10, 5) → 16:21-16:29 Kill D Point (lol only the pull got filmed), 0m8s
+(12, 3) → 22:10-23:14 O as D Point (H), 1m4s
+(13, 4) → 17:56-23:01 Kill D Point (B), 5m5s
+(18, 0) → 22:38-23:16 Kill D Point (H), 0m38s
+long_d_holds
+(0, 6) → start-3:11 D1 Point (H), 3m11s
+(5, 5) → 7:31-10:42 D1 Point (H), 3m11s
+(8, 0) → 8:37-11:56 D1 Point (H), 3m19s
+(10, 2) → 16:23-21:07 D1 Point (H), 4m44s
+(5, 1) → 9:32-13:07 D2 Point (H), 3m35s
+(8, 2) → 12:18-15:52 D2 Point (H), 3m34s
+(14, 4) → 24:27-30:24 D2 Point (H), 5m57s
+d_breaks
+(0, 1) → start-0:33 D1 Point (B), 0m33s
+(0, 5) → start-1:17 D1 Point (B), 1m17s
+(1, 2) → 0:14-3:34 D1 Point (B), 3m20s
+(1, 3) → 0:29-1:15 D1 Point (B), 0m46s
+(2, 1) → 1:25-4:00 D1 Point (B), 2m35s
+(3, 4) → 4:33-6:27 D1 Point (B), 1m54s
+(4, 0) → 5:11-5:43 D1 Point (B), 0m32s
+(5, 3) → 13:40-14:43 D1 + Daylan Point (B), 1m3s
+(6, 6) → 9:17-11:10 D1 Point (B), 1m53s
+(7, 0) → 7:56-8:34 D1 Point (B), 0m38s
+(7, 1) → 14:10-15:04 D1 Point (B), 0m54s
+(7, 2) → 8:32-12:05 D1 Point (B), 3m33s
+(11, 1) → 22:32-25:22 D1 Point (B), 2m50s
+(14, 3) → 24:11-26:09 D1 Point (B), 1m58s
+(1, 1) → 0:42-1:19 D2 Point (B), 0m37s
+(2, 3) → 1:31-5:03 D2 Point (B), 3m32s
+(3, 1) → 4:03-5:42 D2 Point (B), 1m39s
+(14, 2) → 31:15-31:39 D2 Point (B), 0m24s
+(3, 3) → 5:12-10:18 Aggro Z Point (B), 5m6s
+(4, 1) → 6:03-9:25 Aggro Z Point (B), 3m22s
+(4, 2) → 4:53-6:29 Aggro Z Point (B), 1m36s
+(7, 6) → 11:13-12:46 Aggro Z Point (B), 1m33s
+(8, 1) → 15:07-19:06 Aggro Z Point (B), 3m59s
+(13, 2) → 24:47-31:12 Aggro Z Point (B), 6m25s
+(4, 3) → 11:00-12:50 Suns Point (B), 1m50s
+(10, 1) → 20:10-22:27 Suns Point (B), 2m17s
+(12, 2) → 23:00-24:40 Suns Point (B), 1m40s
+(16, 3) → 26:50-29:12 Suns Point (B), 2m22s
+(13, 4) → 17:56-23:01 Kill D Point (B), 5m5s
+long_d_breaks
+(1, 2) → 0:14-3:34 D1 Point (B), 3m20s
+(7, 2) → 8:32-12:05 D1 Point (B), 3m33s
+(2, 3) → 1:31-5:03 D2 Point (B), 3m32s
+(3, 3) → 5:12-10:18 Aggro Z Point (B), 5m6s
+(4, 1) → 6:03-9:25 Aggro Z Point (B), 3m22s
+(8, 1) → 15:07-19:06 Aggro Z Point (B), 3m59s
+(13, 2) → 24:47-31:12 Aggro Z Point (B), 6m25s
+(13, 4) → 17:56-23:01 Kill D Point (B), 5m5s

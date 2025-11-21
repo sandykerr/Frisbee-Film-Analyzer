@@ -1,0 +1,51 @@
+School,Line,B,H,B%,H%
+Overall,Aggro Z,8,2,80.0,20.0
+Overall,D,0,1,0.0,100.0
+Overall,D1,14,15,48.0,52.0
+Overall,D1 + Daylan,1,0,100.0,0.0
+Overall,D1 as O,0,1,0.0,100.0
+Overall,D2,4,17,19.0,81.0
+Overall,D2 + Friends,0,1,0.0,100.0
+Overall,Kill D,1,1,50.0,50.0
+Overall,O,3,45,6.0,94.0
+Overall,O as D,1,2,33.0,67.0
+Overall,Suns,4,3,56.99999999999999,43.0
+Georgetown,D1,2,4,33.0,67.0
+Georgetown,D2,0,3,0.0,100.0
+Georgetown,Kill D,0,1,0.0,100.0
+Georgetown,O,1,9,10.0,90.0
+Richmond,Aggro Z,3,0,100.0,0.0
+Richmond,D1,4,0,100.0,0.0
+Richmond,D2,2,1,67.0,33.0
+Richmond,D2 + Friends,0,1,0.0,100.0
+Richmond,O,0,4,0.0,100.0
+Richmond,Suns,1,1,50.0,50.0
+GW,Aggro Z,2,0,100.0,0.0
+GW,D1,2,1,67.0,33.0
+GW,D2,1,4,20.0,80.0
+GW,O,0,5,0.0,100.0
+GW,Suns,1,0,100.0,0.0
+Drexel,Aggro Z,1,1,50.0,50.0
+Drexel,D1,2,1,67.0,33.0
+Drexel,D1 + Daylan,1,0,100.0,0.0
+Drexel,D1 as O,0,1,0.0,100.0
+Drexel,D2,1,1,50.0,50.0
+Drexel,O,0,4,0.0,100.0
+Drexel,O as D,1,2,33.0,67.0
+Drexel,Suns,2,0,100.0,0.0
+JMU,Aggro Z,0,1,0.0,100.0
+JMU,D1,2,3,40.0,60.0
+JMU,D2,0,1,0.0,100.0
+JMU,Kill D,1,0,100.0,0.0
+JMU,O,1,7,12.0,88.0
+JMU,Suns,0,1,0.0,100.0
+GMU,Aggro Z,1,0,100.0,0.0
+GMU,D1,1,3,25.0,75.0
+GMU,D2,0,3,0.0,100.0
+GMU,O,1,7,12.0,88.0
+Vtech,Aggro Z,1,0,100.0,0.0
+Vtech,D,0,1,0.0,100.0
+Vtech,D1,1,3,25.0,75.0
+Vtech,D2,0,4,0.0,100.0
+Vtech,O,0,9,0.0,100.0
+Vtech,Suns,0,1,0.0,100.0
